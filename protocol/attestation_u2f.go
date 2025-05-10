@@ -6,9 +6,9 @@ import (
 	"crypto/elliptic"
 	"crypto/x509"
 
-	"github.com/go-webauthn/webauthn/metadata"
-	"github.com/go-webauthn/webauthn/protocol/webauthncbor"
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/boomhut/webauthn/metadata"
+	"github.com/boomhut/webauthn/protocol/webauthncbor"
+	"github.com/boomhut/webauthn/protocol/webauthncose"
 )
 
 func init() {

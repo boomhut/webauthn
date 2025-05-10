@@ -12,7 +12,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/mitchellh/mapstructure"
 
-	"github.com/go-webauthn/webauthn/metadata"
+	"github.com/boomhut/webauthn/metadata"
 )
 
 func init() {

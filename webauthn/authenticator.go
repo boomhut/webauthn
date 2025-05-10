@@ -1,7 +1,7 @@
 package webauthn
 
 import (
-	"github.com/go-webauthn/webauthn/protocol"
+	"github.com/boomhut/webauthn/protocol"
 )
 
 type Authenticator struct {

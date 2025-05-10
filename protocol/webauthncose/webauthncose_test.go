@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncbor"
+	"github.com/boomhut/webauthn/protocol/webauthncbor"
 )
 
 // TestOKPSignatureVerification is a compatibility test to ensure that removing

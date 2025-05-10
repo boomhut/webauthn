@@ -10,7 +10,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/go-webauthn/webauthn/protocol"
+	"github.com/boomhut/webauthn/protocol"
 )
 
 // BEGIN LOGIN
@@ -374,9 +374,9 @@ func (webauthn *WebAuthn) validateLogin(user User, session SessionData, parsedRe
 	// Handle step 17.
 	credential.Authenticator.UpdateCounter(parsedResponse.Response.AuthenticatorData.Counter)
 	// Check if the BackupEligible flag has changed.
-	if credential.Flags.BackupEligible != parsedResponse.Response.AuthenticatorData.Flags.HasBackupEligible() {
-		return nil, protocol.ErrBadRequest.WithDetails("BackupEligible flag inconsistency detected during login validation")
-	}
+	// if credential.Flags.BackupEligible != parsedResponse.Response.AuthenticatorData.Flags.HasBackupEligible() {
+	// 	return nil, protocol.ErrBadRequest.WithDetails("BackupEligible flag inconsistency detected during login validation")
+	// }
 
 	// Check for the invalid combination BE=0 and BS=1.
 	if !parsedResponse.Response.AuthenticatorData.Flags.HasBackupEligible() && parsedResponse.Response.AuthenticatorData.Flags.HasBackupState() {

@@ -1,7 +1,7 @@
 # WebAuthn Library
 
-[![GoDoc](https://godoc.org/github.com/go-webauthn/webauthn?status.svg)](https://godoc.org/github.com/go-webauthn/webauthn)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-webauthn/webauthn)](https://goreportcard.com/report/github.com/go-webauthn/webauthn)
+[![GoDoc](https://godoc.org/github.com/boomhut/webauthn?status.svg)](https://godoc.org/github.com/boomhut/webauthn)
+[![Go Report Card](https://goreportcard.com/badge/github.com/boomhut/webauthn)](https://goreportcard.com/report/github.com/boomhut/webauthn)
 
 
 This library is meant to handle [Web Authentication](https://www.w3.org/TR/webauthn) for Go apps that wish to implement 
@@ -43,7 +43,7 @@ While we strive to avoid such changes and strive to notify users they may be una
 
 ## Quickstart
 
-`go get github.com/go-webauthn/webauthn` and initialize it in your application with basic configuration values. 
+`go get github.com/boomhut/webauthn` and initialize it in your application with basic configuration values. 
 
 Make sure your `user` model is able to handle the interface functions laid out in `webauthn/types.go`. This means also 
 supporting the storage and retrieval of the credential and authenticator structs in `webauthn/credential.go` and 
@@ -70,7 +70,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/go-webauthn/webauthn/webauthn"
+	"github.com/boomhut/webauthn/webauthn"
 )
 
 var (
@@ -187,8 +187,8 @@ You can modify the registration options in the following ways:
 package example
 
 import (
-	"github.com/go-webauthn/webauthn/protocol"
-	"github.com/go-webauthn/webauthn/webauthn"
+	"github.com/boomhut/webauthn/protocol"
+	"github.com/boomhut/webauthn/webauthn"
 )
 
 var webAuthn webauthn.WebAuthn // init this in your init function
@@ -221,8 +221,8 @@ You can modify the login options to allow only certain credentials:
 package example
 
 import (
-	"github.com/go-webauthn/webauthn/protocol"
-	"github.com/go-webauthn/webauthn/webauthn"
+	"github.com/boomhut/webauthn/protocol"
+	"github.com/boomhut/webauthn/webauthn"
 )
 
 var webAuthn webauthn.WebAuthn // init this in your init function
@@ -256,8 +256,8 @@ import (
 	"fmt"
 	"time"
 	
-	"github.com/go-webauthn/webauthn/protocol"
-	"github.com/go-webauthn/webauthn/webauthn"
+	"github.com/boomhut/webauthn/protocol"
+	"github.com/boomhut/webauthn/webauthn"
 )
 
 func main() {
@@ -318,9 +318,9 @@ change we will adapt accordingly. The Protocol Value is a raw representation of 
 breaking changes whereas the other flags or lack thereof may not be. 
 
 Implementers are therefore encouraged to use
-[func (CredentialFlags) ProtocolValue](https://pkg.go.dev/github.com/go-webauthn/webauthn/webauthn#CredentialFlags.ProtocolValue)
+[func (CredentialFlags) ProtocolValue](https://pkg.go.dev/github.com/boomhut/webauthn/webauthn#CredentialFlags.ProtocolValue)
 to retrieve the raw value and 
-[webauthn.NewCredentialFlags](https://pkg.go.dev/github.com/go-webauthn/webauthn/webauthn#NewCredentialFlags) to 
+[webauthn.NewCredentialFlags](https://pkg.go.dev/github.com/boomhut/webauthn/webauthn#NewCredentialFlags) to 
 restore it; and instead of using the individual flags to store the value store the Protocol Value, and only store the
 individual flags as a means to perform compliance related decisions.
 
@@ -347,8 +347,8 @@ package example
 import (
 	"net/http"
 	
-	"github.com/go-webauthn/webauthn/protocol"
-	"github.com/go-webauthn/webauthn/webauthn"
+	"github.com/boomhut/webauthn/protocol"
+	"github.com/boomhut/webauthn/webauthn"
 )
 
 func FinishLogin(w http.ResponseWriter, r *http.Request) {
@@ -381,7 +381,7 @@ can be leveraged to verify the credential against the [metadata.Provider]. This 
 on every login, or with a audit schedule.
 
 In addition to using the [Credential Verify] function the 
-[webauthn.Config](https://pkg.go.dev/github.com/go-webauthn/webauthn/webauthn#Config) can contain a provider which will
+[webauthn.Config](https://pkg.go.dev/github.com/boomhut/webauthn/webauthn#Config) can contain a provider which will
 process all registrations automatically.
 
 At this time no tooling exists to verify the credential automatically outside the registration flow. Implementation of
@@ -395,6 +395,6 @@ implementation. Without their amazing work this library could not exist.
 
 
 [github.com/duo-labs/webauthn]: https://github.com/duo-labs/webauthn
-[webauthn.Credential]: https://pkg.go.dev/github.com/go-webauthn/webauthn/webauthn#Credential
-[metadata.Provider]: https://pkg.go.dev/github.com/go-webauthn/webauthn/metadata#Provider
-[Credential Verify]: https://pkg.go.dev/github.com/go-webauthn/webauthn/webauthn#Credential.Verify
+[webauthn.Credential]: https://pkg.go.dev/github.com/boomhut/webauthn/webauthn#Credential
+[metadata.Provider]: https://pkg.go.dev/github.com/boomhut/webauthn/metadata#Provider
+[Credential Verify]: https://pkg.go.dev/github.com/boomhut/webauthn/webauthn#Credential.Verify

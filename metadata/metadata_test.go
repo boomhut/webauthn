@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/boomhut/webauthn/protocol/webauthncose"
 )
 
 func TestProductionMetadataTOCParsing(t *testing.T) {

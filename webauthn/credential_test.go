@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/go-webauthn/webauthn/protocol"
+	"github.com/boomhut/webauthn/protocol"
 )
 
 func TestMakeNewCredential(t *testing.T) {

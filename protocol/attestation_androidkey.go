@@ -6,8 +6,8 @@ import (
 	"encoding/asn1"
 	"fmt"
 
-	"github.com/go-webauthn/webauthn/metadata"
-	"github.com/go-webauthn/webauthn/protocol/webauthncose"
+	"github.com/boomhut/webauthn/metadata"
+	"github.com/boomhut/webauthn/protocol/webauthncose"
 )
 
 func init() {
